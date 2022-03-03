@@ -19,17 +19,26 @@ So this project tries to do the following in order to *maybe* get elden ring wor
 
 
 How to try this out ?
--> Build this project with Visual Studio 2019 (community edition will do) using the x64 target (or just grab the debug dll file from the github release)
--> Place the new "fake" d3d12.dll in the elden ring game folder (where eldenring.exe is located)
--> Grab the real d3d12.dll and d3d12core.dll from your windows/system32 folder, rename the real d3d12.dll to d3d12_original.dll and place both dlls in the elden ring game folder, too
--> Try to launch elden ring, now you should get past the white screen :-) 
+
+-Build this project with Visual Studio 2019 (community edition will do) using the x64 target (or just grab the debug dll file from the github release)
+
+-Place the new "fake" d3d12.dll in the elden ring game folder (where eldenring.exe is located)
+
+-Grab the real d3d12.dll and d3d12core.dll from your windows/system32 folder, rename the real d3d12.dll to d3d12_original.dll and place both dlls in the elden ring game folder, too
+
+-Try to launch elden ring, now you should get past the white screen :-) 
 
 Hints:
 - The WSOD is just a symptom and apparently has different causes - only try this if you exhausted all other possible causes any your GPU is the likely culprit
 - You may need to use a version of elden ring with copy protection removed, this change is likely to trigger anti-cheat and anti-debugging/drm measures, so don't expect this to play nice with the retail version
 - Maybe grab DebugView (https://docs.microsoft.com/en-us/sysinternals/downloads/debugview) and watch the eventlog while launching elden ring: 
 You should see some debug messages from the fake dll like this:
+
 [15016] D3D12CreateDevice-LoadLibrary Result:3360000
+
 [15016] D3D12CreateDevice - Proxy function called!
+
 [15016] D3D12CreateDevice - Original function address queried
-[15016] D3D12CreateDevice-CallResult:0 -> this is the return code of D3D12CreateDevice and can used to check the for error messages (see https://docs.microsoft.com/en-us/windows/win32/direct3ddxgi/dxgi-error)
+
+[15016] D3D12CreateDevice-CallResult:0 
+-> this is the return code of D3D12CreateDevice and can used to check the for error messages (see https://docs.microsoft.com/en-us/windows/win32/direct3ddxgi/dxgi-error)

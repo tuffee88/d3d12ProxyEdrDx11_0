@@ -22,7 +22,8 @@ How to try this out ?
 
 -Build this project with Visual Studio 2019 (community edition will do) using the x64 target (or just grab the debug dll file from the github release)
 
--Grab the real d3d12.dll and d3d12core.dll from your windows/system32 folder, rename the real d3d12.dll to d3d12_original.dll and place both dlls in the elden ring game folder (where eldenring.exe is located)
+-Grab the real d3d12.dll and d3d12core.dll from your windows/system32 folder, place both dlls in the elden ring game folder (where eldenring.exe is located) 
+AND RENAME the real d3d12.dll to d3d12_original.dll (the one inside the game folder, NOT the dlls from windows/system32)
 
 -Place the new "fake" d3d12.dll in the elden ring game folder, too (where eldenring.exe is located)
 

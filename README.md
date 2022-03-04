@@ -22,15 +22,16 @@ How to try this out ?
 
 -Build this project with Visual Studio 2019 (community edition will do) using the x64 target (or just grab the debug dll file from the github release)
 
--Place the new "fake" d3d12.dll in the elden ring game folder (where eldenring.exe is located)
+-Grab the real d3d12.dll and d3d12core.dll from your windows/system32 folder, rename the real d3d12.dll to d3d12_original.dll and place both dlls in the elden ring game folder (where eldenring.exe is located)
 
--Grab the real d3d12.dll and d3d12core.dll from your windows/system32 folder, rename the real d3d12.dll to d3d12_original.dll and place both dlls in the elden ring game folder, too
+-Place the new "fake" d3d12.dll in the elden ring game folder, too (where eldenring.exe is located)
 
 -Try to launch elden ring, now you should get past the white screen :-) 
 
 Hints:
 - The WSOD is just a symptom and apparently has different causes - only try this if you exhausted all other possible causes any your GPU is the likely culprit
 - You may need to use a version of elden ring with copy protection removed, this change is likely to trigger anti-cheat and anti-debugging/drm measures, so don't expect this to play nice with the retail version
+- Try to start eldenring.exe directly, not via the start_protected_game.exe (EasyAnti-Cheat has to be disabled, so only offline play should work)
 - Maybe grab DebugView (https://docs.microsoft.com/en-us/sysinternals/downloads/debugview) and watch the eventlog while launching elden ring: 
 You should see some debug messages from the fake dll like this:
 

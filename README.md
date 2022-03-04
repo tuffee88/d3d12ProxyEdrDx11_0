@@ -1,13 +1,13 @@
 # d3d12ProxyEdrDx11_0
 Totally naive app using proxy/dll forwarding to try and get Elden Ring running on DX12 hardware with Feature level 11_0 (f.e. Nvidia Kepler GPUs) 
 
-To be honest I just get really pissed that Elden Ring crashes with the famous WSOD (White Screen of Death) on my GPU (NVIDIA Tesla K40 using off-screen rendering),
+To be honest I just got really pissed that Elden Ring crashes with the famous WSOD (White Screen of Death) on my GPU (NVIDIA Tesla K40 using off-screen rendering),
 I never imagined that I'd actually get something working :-)
 
 So this is it:
 
 - Some debugging revealed that in *my* case the white screen of death is caused by failing to properly initialize DX12 (and not bothering to check the return code...)
-- To be more specific: The game seems to call D3D12CreateDevice with a min required feature level of D3D_FEATURE_LEVEL_12 - which is greater than the max. featured on NVIDIA Kepler GPUs (11_0)
+- To be more specific: The game seems to call D3D12CreateDevice with a min required feature level of D3D_FEATURE_LEVEL_12 - which is greater than the max. supported feature level on NVIDIA Kepler GPUs (11_0)
 - After that things go downhill fast (mainly because the game doesn't seem to perform proper error handling)...
 
 So this project tries to do the following in order to *maybe* get elden ring working for your old non-supported D3D_FEATURE_LEVEL_11_0 GPU:
@@ -23,7 +23,7 @@ How to try this out ?
 -Build this project with Visual Studio 2019 (community edition will do) using the x64 target (or just grab the debug dll file from the github release)
 
 -Grab the real d3d12.dll and d3d12core.dll from your windows/system32 folder, place both dlls in the elden ring game folder (where eldenring.exe is located) 
-AND RENAME the real d3d12.dll to d3d12_original.dll (the one inside the game folder, NOT the dlls from windows/system32)
+AND RENAME the real d3d12.dll to d3d12_original.dll (the one inside the game folder, NOT the dll in windows/system32)
 
 -Place the new "fake" d3d12.dll in the elden ring game folder, too (where eldenring.exe is located)
 

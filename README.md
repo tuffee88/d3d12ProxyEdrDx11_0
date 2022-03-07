@@ -15,12 +15,12 @@ So this project tries to do the following in order to *maybe* get elden ring wor
 - the "fake" d3d12.dll just forwards all but one function to the original d3d12 dll (that has to be placed in the same folder and renamed to d3d12_original.dll)
 - the "fake" d3d12.dll provides a different implementation of D3D12CreateDevice (the function call that fails), which just calls the original D3D12CreateDevice function with the same parameters but D3D_FEATURE_LEVEL set to 11_0 instead of 12_0
 - -> This *usually* leads to successfull D3D12 init and - to my	complete surprise - getting ingame on my Nvidia Kepler GPU
-- -> The whole project is very likely not a good example how to do something like this, so use with caution ! I just thought this might be helpful for other people stuck on Nvidia GTX 6xx or 7xx series GPUS, no guarantees or anything !
+- -> The whole project is very likely not a good example how to do something like this, so use with caution ! I just thought this might be helpful for other people stuck on Nvidia GTX 6xx or 7xx series GPUs, no guarantees or anything !
 
 
 How to try this out ?
 
--Build this project with Visual Studio 2019 (community edition will do) using the x64 target (or just grab the debug dll file from the github release)
+-Build this project with Visual Studio 2019 (community edition will do) using the x64 target OR just grab the dll file from the github release
 
 -Grab the real d3d12.dll and d3d12core.dll from your windows/system32 folder, place both dlls in the elden ring game folder (where eldenring.exe is located) 
 AND RENAME the real d3d12.dll to d3d12_original.dll (the one inside the game folder, NOT the dll in windows/system32)
@@ -46,4 +46,7 @@ You should see some debug messages from the fake dll like this:
 -> this is the return code of D3D12CreateDevice and can be used to check for error messages (see https://docs.microsoft.com/en-us/windows/win32/direct3ddxgi/dxgi-error)
 
 Notes:
--Received report from one user that this fixed his WSOD on a Geforce 940mx (Maxwell, first Gen, GM108)
+
+-Success reports received for: 
+Geforce 940mx, 960m, 850mx, 760, 780, 780Ti 
+Radeon R9 280x

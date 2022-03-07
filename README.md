@@ -27,12 +27,17 @@ AND RENAME the real d3d12.dll to d3d12_original.dll (the one inside the game fol
 
 -Place the new "fake" d3d12.dll in the elden ring game folder, too (where eldenring.exe is located)
 
+-Disable EasyAnti-Cheat: 
+1. Rename start_protected_game.exe to start_protected_game_original.exe 
+2. Create a copy of eldenring.exe and rename this copy to start_protected_game.exe
+-> Note that only offline play will work, not disabling EasyAnti-Cheat should result in a crash with a "untrusted system files" message (or similar) and might get you banned if otherwise
+
 -Try to launch elden ring, now you should get past the white screen :-) 
 
 Hints:
 - The WSOD is just a symptom and apparently has different causes - only try this if you exhausted all other possible causes any your GPU is the likely culprit
 - You may need to use a version of elden ring with copy protection removed, this change is likely to trigger anti-cheat and anti-debugging/drm measures, so don't expect this to play nice with the retail version
-- Try to start eldenring.exe directly, not via the start_protected_game.exe (EasyAnti-Cheat has to be disabled, so only offline play should work)
+- Try to start eldenring.exe directly, not via the start_protected_game.exe (EasyAnti-Cheat has to be disabled, so only offline play should work - see instructions above)
 - Maybe grab DebugView (https://docs.microsoft.com/en-us/sysinternals/downloads/debugview) and watch the eventlog while launching elden ring: 
 You should see some debug messages from the fake dll like this:
 
@@ -48,5 +53,6 @@ You should see some debug messages from the fake dll like this:
 Notes:
 
 -Success reports received for: 
+
 Geforce 940mx, 960m, 850mx, 760, 780, 780Ti 
 Radeon R9 280x

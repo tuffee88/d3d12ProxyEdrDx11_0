@@ -43,4 +43,7 @@ You should see some debug messages from the fake dll like this:
 [15016] D3D12CreateDevice - Original function address queried
 
 [15016] D3D12CreateDevice-CallResult:0 
--> this is the return code of D3D12CreateDevice and can used to check the for error messages (see https://docs.microsoft.com/en-us/windows/win32/direct3ddxgi/dxgi-error)
+-> this is the return code of D3D12CreateDevice and can be used to check for error messages (see https://docs.microsoft.com/en-us/windows/win32/direct3ddxgi/dxgi-error)
+
+Notes:
+-Received report from one user that this fixed his WSOD on a Geforce 940mx (Maxwell, first Gen, GM108)

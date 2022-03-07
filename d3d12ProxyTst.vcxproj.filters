@@ -23,5 +23,11 @@
     <None Include="dllmain.def">
       <Filter>Quelldateien</Filter>
     </None>
+    <None Include="d3d12AddExp.def">
+      <Filter>Quelldateien</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="d3d12AddExp.lib" />
   </ItemGroup>
 </Project>

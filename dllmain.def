@@ -6,12 +6,11 @@ D3D12CoreCreateLayeredDevice=d3d12_original.D3D12CoreCreateLayeredDevice @104
 D3D12CoreGetLayeredDeviceSize=d3d12_original.D3D12CoreGetLayeredDeviceSize @105
 D3D12CoreRegisterLayers=d3d12_original.D3D12CoreRegisterLayers @106
 
-;D3D12CreateDevice=d3d12_original.D3D12CreateDevice @101 
 D3D12CreateDevice=Proxy_D3D12CreateDevice @101 
 D3D12CreateRootSignatureDeserializer=d3d12_original.D3D12CreateRootSignatureDeserializer @107 
 D3D12CreateVersionedRootSignatureDeserializer=d3d12_original.D3D12CreateVersionedRootSignatureDeserializer @108 
 
-;D3D12DeviceRemovedExtendedData=d3d12_original.D3D12DeviceRemovedExtendedData @109
+D3D12DeviceRemovedExtendedData=d3d12_original.D3D12DeviceRemovedExtendedData @109 ;No export in D3D12.lib-> Added manually via d3d12AddExp.def/.lib
 D3D12EnableExperimentalFeatures=d3d12_original.D3D12EnableExperimentalFeatures @110 
 D3D12GetDebugInterface=d3d12_original.D3D12GetDebugInterface @102 
 
@@ -24,5 +23,6 @@ D3D12PIXReportCounter=d3d12_original.D3D12PIXReportCounter @115
 D3D12SerializeRootSignature=d3d12_original.D3D12SerializeRootSignature @116 
 
 D3D12SerializeVersionedRootSignature=d3d12_original.D3D12SerializeVersionedRootSignature @117 
-;GetBehaviorValue=d3d12_original.GetBehaviorValue @100 
-;SetAppCompatStringPointer=d3d12_original.SetAppCompatStringPointer @103 
+GetBehaviorValue=d3d12_original.GetBehaviorValue @100	;No export in D3D12.lib-> Added manually via d3d12AddExp.def/.lib
+SetAppCompatStringPointer=d3d12_original.SetAppCompatStringPointer @103	;No export in D3D12.lib-> Added manually via d3d12AddExp.def/.lib
+

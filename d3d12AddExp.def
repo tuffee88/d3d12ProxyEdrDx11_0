@@ -1,0 +1,5 @@
+EXPORTS
+
+D3D12DeviceRemovedExtendedData
+GetBehaviorValue
+SetAppCompatStringPointer

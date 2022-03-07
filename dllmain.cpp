@@ -54,18 +54,16 @@ BOOL APIENTRY DllMain( HMODULE hModule,
         hL = LoadLibraryW(L".\\d3d12_original.dll");
 
         /*Provide feedback*/
-        wchar_t fB[50];
-        swprintf(fB, 50, L"D3D12CreateDevice-LoadLibrary Result:%x\n", (int)hL);
+        wchar_t fB[100];
+        swprintf(fB, 100, L"D3D12CreateDevice - LoadLibrary Result: %llx\n", (unsigned long long)hL);
         OutputDebugString(fB);
 
         if (hL == NULL)return FALSE; /*Exit on Error*/
 
         break;
     case DLL_THREAD_ATTACH:
-        //OutputDebugString(L"Proxy Dll thread attach\n");
         break;
     case DLL_THREAD_DETACH:
-        //OutputDebugString(L"Proxy Dll thread detach\n");
         break;
     case DLL_PROCESS_DETACH:
         OutputDebugString(L"Proxy Dll process detach\n");
@@ -84,7 +82,7 @@ HRESULT Proxy_D3D12CreateDevice(
 {
     
     HRESULT hD = 0;
-    wchar_t debugBuffer[50];
+    wchar_t debugBuffer[100];
     D3D_FEATURE_LEVEL ModifiedFeatureLevel = D3D_FEATURE_LEVEL_11_0;
 
     OutputDebugString(L"D3D12CreateDevice - Proxy function called!\n");
@@ -92,7 +90,7 @@ HRESULT Proxy_D3D12CreateDevice(
     /*Get original function addr from original dll*/
     D3D12CreateDeviceFnc D3D12CreateDeviceOrg = (D3D12CreateDeviceFnc)GetProcAddress(hL, "D3D12CreateDevice");
     if(D3D12CreateDeviceOrg != NULL) OutputDebugString(L"D3D12CreateDevice - Original function address queried");
-    else { OutputDebugString(L"D3D12CreateDevice - Original function address unavailable, quitting!"); return FALSE; }
+    else { OutputDebugString(L"D3D12CreateDevice - Original function address unavailable, quitting!"); return S_FALSE; }
 
     hD = D3D12CreateDeviceOrg(
         pAdapter,
@@ -101,8 +99,20 @@ HRESULT Proxy_D3D12CreateDevice(
         ppDevice);
     
     /*Feedback via DebugString*/
-    swprintf(debugBuffer,50, L"D3D12CreateDevice-CallResult:%x\n", (int)hD);
+    swprintf(debugBuffer,100, L"D3D12CreateDevice - CallResult: %llx\n", (unsigned long long)hD);
     OutputDebugString(debugBuffer);
 
+    /*Extract some additonal useful information from the return code*/
+    if(hD == S_OK) swprintf(debugBuffer, 100, L"D3D12CreateDevice - CallResult indicates SUCCESS (S_OK)\n");
+    if(hD == S_FALSE) swprintf(debugBuffer, 100, L"D3D12CreateDevice - CallResult indicates FAILURE (S_FALSE)\n");
+    OutputDebugString(debugBuffer);
+
+    if (hD >= 0x887A0000)
+    {
+        swprintf(debugBuffer, 100, L"Possible DXGI_ERROR code, check MSDN for more information on: %llx\n", (unsigned long long)hD);    
+        OutputDebugString(debugBuffer);
+    }
+
+    
     return hD;
 }

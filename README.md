@@ -54,5 +54,5 @@ Notes:
 
 -Success reports received for: 
 
-Geforce 940mx, 960m, 850mx, 760, 780, 780Ti 
+Geforce 940mx, 960m, 850mx, 750ti, 760, 780, 780Ti 
 Radeon R9 280x

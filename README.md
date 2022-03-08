@@ -25,6 +25,8 @@ How to try this out ?
 -Grab the real d3d12.dll and d3d12core.dll from your windows/system32 folder, place both dlls in the elden ring game folder (where eldenring.exe is located) 
 AND RENAME the real d3d12.dll to d3d12_original.dll (the one inside the game folder, NOT the dll in windows/system32)
 
+Note: If you don't have d3d12core.dll in windows/system32 just omit this dll - or update your Windows version (then perform the copy of both dlls again after updating)
+
 -Place the new "fake" d3d12.dll in the elden ring game folder, too (where eldenring.exe is located)
 
 -Disable EasyAnti-Cheat: 
@@ -54,5 +56,5 @@ Notes:
 
 -Success reports received for: 
 
-Geforce 940mx, 960m, 850mx, 750ti, 760, 780, 780Ti 
+Geforce 940mx, 960m, 850mx, 750ti, 760, 770, 780, 780Ti 
 Radeon R9 280x

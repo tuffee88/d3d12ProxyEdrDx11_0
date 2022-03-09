@@ -56,7 +56,7 @@ Notes:
 
 1.Success reports received for: 
 Geforce 940mx, 960m, 850m, 850mx, 750ti, 760, 770, 780, 780Ti 
-Radeon R9 280x
+Radeon R9 280x, R7 370
 
 2.According to user reports this works also for Assasin's Creed Valhalla !
 

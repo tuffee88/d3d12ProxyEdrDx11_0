@@ -59,5 +59,7 @@ Geforce 940mx, 960m, 850m, 850mx, 750ti, 760, 770, 780, 780Ti
 Radeon R9 280x
 
 2.According to user reports this works also for Assasin's Creed Valhalla !
-Feel free to give this a shot on other DX12 games that are requiring FEATURE_LEVEL_12_0 or 11_1 if you're stuck with a DX12 card that only supports FEATURE_LEVEL_11_0.
-If this works for other games please let me know (add a comment to the pinned issues regarding support for other games) and I'll add a note to the README so other players can find this easier.
+
+->Feel free to give this a shot on other DX12 games that are requiring FEATURE_LEVEL_12_0 or 11_1 if you're stuck with a DX12 card that only supports FEATURE_LEVEL_11_0.
+
+->If this works for other games please let me know (add a comment to the pinned issues regarding support for other games) and I'll add a note to the README so other players can find this easier.

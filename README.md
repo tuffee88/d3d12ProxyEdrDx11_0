@@ -55,8 +55,8 @@ You should see some debug messages from the fake dll like this:
 # Notes
 
 1. So for I've received success reports for the following GPUs: 
-Geforce 940mx, 960m, 850m, 850mx, 680, 750ti, 760, 770, 780, 780Ti 
-Radeon R9 280x, R7 370
+- Geforce 940mx, 960m, 850m, 850mx, 680, 750ti, 760, 770, 780, 780Ti
+- Radeon R9 280x, R7 370
 
 2. According to user reports this works also for Assassin's Creed Valhalla
   - Feel free to give this a shot on other DX12 games that are requiring FEATURE_LEVEL_12_0 or 11_1 if you're stuck with a DX12 card that only supports FEATURE_LEVEL_11_0.

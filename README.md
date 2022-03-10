@@ -51,12 +51,12 @@ This project tries to do the following in order to *maybe* get Elden Ring workin
 -> this is the return code of D3D12CreateDevice and can be used to check for error messages 
 (see https://docs.microsoft.com/en-us/windows/win32/direct3ddxgi/dxgi-error)
 
-4. If you're experiencing issues ingame (or after passing the WSOD) try running this game via Vulkan using vkd3d-proton (especially on AMD cards).
+4. If you're experiencing issues after passing the WSOD try running this game via Vulkan using vkd3d-proton (especially on AMD cards):
    - You can get Windows builds at: https://www.nexusmods.com/eldenring/mods/12
-   - Just have to replace d3d12_original.dll with the d3d12.dll from vkd3d-proton and try launching the game
+   - Replace d3d12_original.dll with the d3d12.dll from vkd3d-proton and try launching the game
 
 # Notes
-1. So for I've received success reports for the following GPUs: 
+1. So far I've received success reports for the following GPUs: 
 - Geforce: 940mx, 960m, 850m, 850mx, 680, 750ti, 760, 770, 780, 780Ti, Tesla K40*
 - Radeon: R9 280x, R7 370
 

@@ -1,5 +1,5 @@
 # d3d12ProxyEdrDx11_0
-Project using proxy/dll forwarding to try and get Elden Ring running on DX12 hardware with Feature level 11_0 (f.e. Nvidia Kepler GPUs) 
+Project using proxy function and dll forwarding to try and get Elden Ring running on DX12 hardware with Feature level 11_0 (f.e. Nvidia Kepler GPUs) 
 
 To be honest I just got really pissed that Elden Ring crashes with the famous WSOD (White Screen of Death) on my GPU (NVIDIA Tesla K40 w. hybrid rendering),
 I never imagined that I'd actually get something working :-)

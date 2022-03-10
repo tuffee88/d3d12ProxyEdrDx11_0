@@ -1,5 +1,5 @@
 # d3d12ProxyEdrDx11_0
-Project using proxy function and dll forwarding to try and get Elden Ring running on DX12 hardware with Feature level 11_0 (f.e. Nvidia Kepler GPUs) 
+Project using proxy function and dll forwarding to try and get Elden Ring running on *DX12* hardware with Feature level 11_0  
 
 To be honest I just got really pissed that Elden Ring crashes with the famous WSOD (White Screen of Death) on my GPU (NVIDIA Tesla K40 w. hybrid rendering),
 I never imagined that I'd actually get something working :-)
@@ -14,8 +14,8 @@ So this project tries to do the following in order to *maybe* get elden ring wor
 - provide a "fake" d3d12.dll that will be loaded instead of the real d3d12.dll by Elden Ring 
 - the "fake" d3d12.dll just forwards all but one function to the original d3d12.dll (renamed to d3d12_original.dll)
 - the "fake" d3d12.dll provides a different implementation of the failing function call D3D12CreateDevice, which just calls the original D3D12CreateDevice function with the same parameters but D3D_FEATURE_LEVEL set to 11_0 instead of 12_0
-- -> This *usually* leads to successfull D3D12 init and - to my	complete surprise - getting ingame on my Nvidia Kepler GPU
-- -> The whole project is very likely not a good example how to do something like this, so use with caution ! I just thought this might be helpful for other people stuck on Nvidia GTX 6xx or 7xx series GPUs, no guarantees or anything !
+  - This *usually* leads to successfull D3D12 init and - to my	complete surprise - getting ingame on my Nvidia Kepler GPU
+  - The whole project is very likely not a good example how to do something like this, so use with caution ! I just thought this might be helpful for other people stuck on Nvidia GTX 6xx or 7xx series GPUs, no guarantees or anything !
 
 
 # How to try this out ?

@@ -6,8 +6,8 @@ I never imagined that I'd actually get something working :-)
 
 So this is it:
 
-- Some debugging revealed that in *my* case the white screen of death is caused by failing to properly initialize DX12 (and not bothering to check the return code...)
-- To be more specific: The game seems to call D3D12CreateDevice with a min required feature level of D3D_FEATURE_LEVEL_12 - which is greater than the max. supported feature level on NVIDIA Kepler GPUs (11_0)
+- Some debugging revealed that in *my* case the white screen of death is caused by failing to properly initialize DX12 
+- To be more specific: The game seems to call D3D12CreateDevice with a min required feature level of D3D_FEATURE_LEVEL_12 - which is greater than the max. supported feature level on my GPU (11_0)
 - After that things go downhill fast (mainly because the game doesn't seem to perform proper error handling)...
 
 This project tries to do the following in order to *maybe* get Elden Ring working for your old non-supported D3D_FEATURE_LEVEL_11_0/ 11_1 GPUs:

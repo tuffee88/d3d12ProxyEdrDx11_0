@@ -1,7 +1,7 @@
 # d3d12ProxyEdrDx11_0
-Totally naive app using proxy/dll forwarding to try and get Elden Ring running on DX12 hardware with Feature level 11_0 (f.e. Nvidia Kepler GPUs) 
+Project using proxy/dll forwarding to try and get Elden Ring running on DX12 hardware with Feature level 11_0 (f.e. Nvidia Kepler GPUs) 
 
-To be honest I just got really pissed that Elden Ring crashes with the famous WSOD (White Screen of Death) on my GPU (NVIDIA Tesla K40 using off-screen rendering),
+To be honest I just got really pissed that Elden Ring crashes with the famous WSOD (White Screen of Death) on my GPU (NVIDIA Tesla K40 w. hybrid rendering),
 I never imagined that I'd actually get something working :-)
 
 So this is it:
@@ -10,10 +10,10 @@ So this is it:
 - To be more specific: The game seems to call D3D12CreateDevice with a min required feature level of D3D_FEATURE_LEVEL_12 - which is greater than the max. supported feature level on NVIDIA Kepler GPUs (11_0)
 - After that things go downhill fast (mainly because the game doesn't seem to perform proper error handling)...
 
-So this project tries to do the following in order to *maybe* get elden ring working for your old non-supported D3D_FEATURE_LEVEL_11_0 GPU:
-- provide a "fake" d3d12.dll that will be loaded instead of the real d3d12.dll by elden ring (when placed in the elden ring game exe folder)
-- the "fake" d3d12.dll just forwards all but one function to the original d3d12 dll (that has to be placed in the same folder and renamed to d3d12_original.dll)
-- the "fake" d3d12.dll provides a different implementation of D3D12CreateDevice (the function call that fails), which just calls the original D3D12CreateDevice function with the same parameters but D3D_FEATURE_LEVEL set to 11_0 instead of 12_0
+So this project tries to do the following in order to *maybe* get elden ring working for your old non-supported D3D_FEATURE_LEVEL_11_0 (or 11_1) GPU:
+- provide a "fake" d3d12.dll that will be loaded instead of the real d3d12.dll by Elden Ring 
+- the "fake" d3d12.dll just forwards all but one function to the original d3d12.dll (renamed to d3d12_original.dll)
+- the "fake" d3d12.dll provides a different implementation of the failing function call D3D12CreateDevice, which just calls the original D3D12CreateDevice function with the same parameters but D3D_FEATURE_LEVEL set to 11_0 instead of 12_0
 - -> This *usually* leads to successfull D3D12 init and - to my	complete surprise - getting ingame on my Nvidia Kepler GPU
 - -> The whole project is very likely not a good example how to do something like this, so use with caution ! I just thought this might be helpful for other people stuck on Nvidia GTX 6xx or 7xx series GPUs, no guarantees or anything !
 

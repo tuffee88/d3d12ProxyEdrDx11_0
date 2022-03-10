@@ -67,7 +67,10 @@ Radeon R9 280x, R7 370
 # Known Issues
 
 - You might see some screen flickering and/or incorrect fog rendering on Nvidia GPUs 
-- There have been reports of frequent crashes ingame on AMD R7 GPU
+- There have been reports of frequent crashes ingame on AMD R7 GPUs
 
 # Donate
+
+If this helped you please consider donating some beer money (won't be used for Coffee, I promise)
+
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=F2DK2UNHLCFHL)

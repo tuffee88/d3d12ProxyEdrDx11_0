@@ -70,4 +70,4 @@ You might see some screen flickering and/or incorrect fog rendering on Nvidia GP
 There has been one report of frequent crashes ingame on AMD R7 GPU
 
 # Donate
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](F2DK2UNHLCFHL)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=F2DK2UNHLCFHL)

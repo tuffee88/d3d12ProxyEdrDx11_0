@@ -19,21 +19,21 @@ So this project tries to do the following in order to *maybe* get Elden Ring wor
 
 # How to try this out ?
 
-- Build this project with Visual Studio 2019 (community edition will do) using the x64 target OR just grab the dll file from the github release
+1. Build this project with Visual Studio 2019 using the x64 target **OR** just grab the dll file from the Github release
 
-- Grab the real d3d12.dll and d3d12core.dll from your windows/system32 folder, place both dlls in the elden ring game folder (where eldenring.exe is located) 
-AND RENAME the real d3d12.dll to d3d12_original.dll (the one inside the game folder, NOT the dll in windows/system32)
+2. Grab the real d3d12.dll and d3d12core.dll from your windows/system32 folder, place both dlls in the Elden Ring game folder (where eldenring.exe is located) 
 
-Note: If you don't have d3d12core.dll in windows/system32 just omit this dll - or update your Windows version (then perform the copy of both dlls again after updating)
+3. RENAME the real d3d12.dll to d3d12_original.dll (the one inside the game folder, NOT the dll in windows/system32)
+   - Note: If you don't have d3d12core.dll in windows/system32 just omit this dll - or update your Windows version (then perform the copy of both dlls again after updating)
 
-- Place the new "fake" d3d12.dll in the elden ring game folder, too (where eldenring.exe is located)
+4. Place the new "fake" d3d12.dll in the Elden Ring game folder, too (where eldenring.exe is located)
 
-- Disable EasyAnti-Cheat: 
-1. Rename start_protected_game.exe to start_protected_game_original.exe 
-2. Create a copy of eldenring.exe and rename this copy to start_protected_game.exe
--> Note that only offline play will work, not disabling EasyAnti-Cheat should result in a crash with a "untrusted system files" message (or similar) and might get you banned otherwise
+5. Disable EasyAnti-Cheat: 
+   - Rename start_protected_game.exe to start_protected_game_original.exe 
+   - Create a copy of eldenring.exe and rename this copy to start_protected_game.exe
+     -> Note that only offline play will work, not disabling EasyAnti-Cheat should result in a crash with a "untrusted system files" message (or similar) and might get you banned otherwise
 
-- Try to launch Elden Ring, now you should get past the white screen :-) 
+6. Try to launch Elden Ring, now you should get past the white screen :-) 
 
 # Hints
 1. The WSOD is just a symptom and apparently has different causes - only try this if you exhausted all other possible causes any your GPU is the likely culprit
@@ -50,6 +50,9 @@ Note: If you don't have d3d12core.dll in windows/system32 just omit this dll - o
 
 -> this is the return code of D3D12CreateDevice and can be used to check for error messages 
 (see https://docs.microsoft.com/en-us/windows/win32/direct3ddxgi/dxgi-error)
+
+4. If you're experiencing issues ingame (or after passing the WSOD) try running this game via Vulkan using vkd3d-proton (especially on AMD cards).
+You can get Windows builds at: https://www.nexusmods.com/eldenring/mods/12. You just have to replace d3d12_original.dll with the d3d12.dll from vkd3d-proton
 
 # Notes
 1. So for I've received success reports for the following GPUs: 

@@ -66,7 +66,7 @@ Radeon R9 280x, R7 370
 
 # Known Issues
 
-- You might see some screen flickering and/or incorrect fog rendering on Nvidia GPUs, but in general the game is playable with all major features intact 
+- You might see some screen flickering and/or incorrect fog rendering on Nvidia GPUs 
 - There have been reports of frequent crashes ingame on AMD R7 GPU
 
 # Donate

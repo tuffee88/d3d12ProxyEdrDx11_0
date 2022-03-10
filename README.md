@@ -31,7 +31,7 @@ So this project tries to do the following in order to *maybe* get Elden Ring wor
 5. Disable EasyAnti-Cheat: 
    - Rename start_protected_game.exe to start_protected_game_original.exe 
    - Create a copy of eldenring.exe and rename this copy to start_protected_game.exe
-     -> Note that only offline play will work, not disabling EasyAnti-Cheat should result in a crash with a "untrusted system files" message (or similar) and might get you banned otherwise
+     - Note that only offline play will work, not disabling EasyAnti-Cheat should result in a crash with a "untrusted system files" message (or similar) and might get you banned otherwise
 
 6. Try to launch Elden Ring, now you should get past the white screen :-) 
 
@@ -52,7 +52,8 @@ So this project tries to do the following in order to *maybe* get Elden Ring wor
 (see https://docs.microsoft.com/en-us/windows/win32/direct3ddxgi/dxgi-error)
 
 4. If you're experiencing issues ingame (or after passing the WSOD) try running this game via Vulkan using vkd3d-proton (especially on AMD cards).
-You can get Windows builds at: https://www.nexusmods.com/eldenring/mods/12. You just have to replace d3d12_original.dll with the d3d12.dll from vkd3d-proton
+   - You can get Windows builds at: https://www.nexusmods.com/eldenring/mods/12
+   - Just have to replace d3d12_original.dll with the d3d12.dll from vkd3d-proton and try launching the game
 
 # Notes
 1. So for I've received success reports for the following GPUs: 

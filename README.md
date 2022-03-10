@@ -37,38 +37,34 @@ Note: If you don't have d3d12core.dll in windows/system32 just omit this dll - o
 -Try to launch elden ring, now you should get past the white screen :-) 
 
 # Hints
-- The WSOD is just a symptom and apparently has different causes - only try this if you exhausted all other possible causes any your GPU is the likely culprit
-- You may need to use a version of elden ring with copy protection removed, this change is likely to trigger anti-cheat and anti-debugging/drm measures, so don't expect this to play nice with the retail version
-- Try to start eldenring.exe directly, not via the start_protected_game.exe (EasyAnti-Cheat has to be disabled, so only offline play should work - see instructions above)
-- Maybe grab DebugView (https://docs.microsoft.com/en-us/sysinternals/downloads/debugview) and watch the eventlog while launching elden ring: 
-You should see some debug messages from the fake dll like this:
+1. The WSOD is just a symptom and apparently has different causes - only try this if you exhausted all other possible causes any your GPU is the likely culprit
+2. You'll need to disable EasyAnti-Cheat & Online-Play won't work, see instruction above
+3. If you're having problems or are just interested how this works I suggest to use DebugView (https://docs.microsoft.com/en-us/sysinternals/downloads/debugview) and watch the eventlog while launching Elden Ring, you should see some debug messages from the proxy dll like this:
 
-[15016] D3D12CreateDevice-LoadLibrary Result:3360000
+[15016] D3D12CreateDevice-LoadLibrary Result: xxxx
 
-[15016] D3D12CreateDevice - Proxy function called!
+[15016] D3D12CreateDevice - Proxy function called !
 
 [15016] D3D12CreateDevice - Original function address queried
 
 [15016] D3D12CreateDevice-CallResult:0 
--> this is the return code of D3D12CreateDevice and can be used to check for error messages (see https://docs.microsoft.com/en-us/windows/win32/direct3ddxgi/dxgi-error)
+-> this is the return code of D3D12CreateDevice and can be used to check for error messages 
+(see https://docs.microsoft.com/en-us/windows/win32/direct3ddxgi/dxgi-error)
 
 # Notes
-
 1. So for I've received success reports for the following GPUs: 
-- Geforce 940mx, 960m, 850m, 850mx, 680, 750ti, 760, 770, 780, 780Ti
-- Radeon R9 280x, R7 370
+- Geforce: 940mx, 960m, 850m, 850mx, 680, 750ti, 760, 770, 780, 780Ti
+- Radeon: R9 280x, R7 370
 
 2. According to user reports this works also for Assassin's Creed Valhalla
   - Feel free to give this a shot on other DX12 games that are requiring FEATURE_LEVEL_12_0 or 11_1 if you're stuck with a DX12 card that only supports FEATURE_LEVEL_11_0.
   - If this works for other games please let me know (add a comment to the pinned issues regarding support for other games) and I'll add a note to the README so other players can find this easier.
 
 # Known Issues
-
 - You might see some screen flickering and/or incorrect fog rendering on Nvidia GPUs 
 - There have been reports of frequent crashes ingame on AMD R7 GPUs
 
 # Donate
-
 If this helped you please consider donating some beer money (won't be used for Coffee, I promise)
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=F2DK2UNHLCFHL)

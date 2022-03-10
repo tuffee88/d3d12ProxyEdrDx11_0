@@ -18,7 +18,7 @@ So this project tries to do the following in order to *maybe* get elden ring wor
 - -> The whole project is very likely not a good example how to do something like this, so use with caution ! I just thought this might be helpful for other people stuck on Nvidia GTX 6xx or 7xx series GPUs, no guarantees or anything !
 
 
-How to try this out ?
+#How to try this out ?
 
 -Build this project with Visual Studio 2019 (community edition will do) using the x64 target OR just grab the dll file from the github release
 
@@ -36,7 +36,7 @@ Note: If you don't have d3d12core.dll in windows/system32 just omit this dll - o
 
 -Try to launch elden ring, now you should get past the white screen :-) 
 
-Hints:
+#Hints
 - The WSOD is just a symptom and apparently has different causes - only try this if you exhausted all other possible causes any your GPU is the likely culprit
 - You may need to use a version of elden ring with copy protection removed, this change is likely to trigger anti-cheat and anti-debugging/drm measures, so don't expect this to play nice with the retail version
 - Try to start eldenring.exe directly, not via the start_protected_game.exe (EasyAnti-Cheat has to be disabled, so only offline play should work - see instructions above)
@@ -52,7 +52,7 @@ You should see some debug messages from the fake dll like this:
 [15016] D3D12CreateDevice-CallResult:0 
 -> this is the return code of D3D12CreateDevice and can be used to check for error messages (see https://docs.microsoft.com/en-us/windows/win32/direct3ddxgi/dxgi-error)
 
-Notes:
+#Notes
 
 1.Success reports received for: 
 Geforce 940mx, 960m, 850m, 850mx, 680, 750ti, 760, 770, 780, 780Ti 
@@ -63,3 +63,11 @@ Radeon R9 280x, R7 370
 ->Feel free to give this a shot on other DX12 games that are requiring FEATURE_LEVEL_12_0 or 11_1 if you're stuck with a DX12 card that only supports FEATURE_LEVEL_11_0.
 
 ->If this works for other games please let me know (add a comment to the pinned issues regarding support for other games) and I'll add a note to the README so other players can find this easier.
+
+#Known Issues
+
+You might see some screen flickering and/or incorrect fog rendering on Nvidia GPUs, but in general the game is playable with all major features intact 
+There has been one report of frequent crashes ingame on AMD R7 GPU
+
+#Donate
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](thomas.tuffentsammer@flowerpower69.de)

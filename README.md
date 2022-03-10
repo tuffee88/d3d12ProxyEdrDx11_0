@@ -1,7 +1,7 @@
 # d3d12ProxyEdrDx11_0
 Project using proxy function and dll forwarding to try and get Elden Ring running on *DX12* hardware with Feature level 11_0  
 
-To be honest I just got really pissed that Elden Ring crashes with the famous WSOD (White Screen of Death) on my GPU (NVIDIA Tesla K40 w. hybrid rendering),
+To be honest I just got really pissed that Elden Ring crashes with the famous WSOD (White Screen of Death) on my GPU,
 I never imagined that I'd actually get something working :-)
 
 So this is it:
@@ -53,7 +53,7 @@ Note: If you don't have d3d12core.dll in windows/system32 just omit this dll - o
 
 # Notes
 1. So for I've received success reports for the following GPUs: 
-- Geforce: 940mx, 960m, 850m, 850mx, 680, 750ti, 760, 770, 780, 780Ti
+- Geforce: 940mx, 960m, 850m, 850mx, 680, 750ti, 760, 770, 780, 780Ti, Tesla K40*
 - Radeon: R9 280x, R7 370
 
 2. According to user reports this works also for Assassin's Creed Valhalla

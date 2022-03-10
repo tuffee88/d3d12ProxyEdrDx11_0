@@ -38,12 +38,15 @@ Note: If you don't have d3d12core.dll in windows/system32 just omit this dll - o
 
 # Hints
 1. The WSOD is just a symptom and apparently has different causes - only try this if you exhausted all other possible causes any your GPU is the likely culprit
-2. You'll need to disable EasyAnti-Cheat & Online-Play won't work, see instruction above
+2. You'll need to disable EasyAnti-Cheat & Online-Play won't work, see instructions above
 3. If you're having problems or are just interested how this works I suggest to use DebugView (https://docs.microsoft.com/en-us/sysinternals/downloads/debugview) and watch the eventlog while launching Elden Ring, you should see some debug messages from the proxy dll like this:
 
 [15016] D3D12CreateDevice - LoadLibrary Result: xxxx
+
 [15016] D3D12CreateDevice - Proxy function called !
+
 [15016] D3D12CreateDevice - Original function address queried
+
 [15016] D3D12CreateDevice - CallResult: xxx
 
 -> this is the return code of D3D12CreateDevice and can be used to check for error messages 

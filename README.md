@@ -40,10 +40,10 @@ This project tries to do the following in order to *maybe* get Elden Ring workin
 2. You'll need to disable EasyAnti-Cheat & Online-Play won't work, see instructions above
 3. If you're having problems or are just interested how this works I suggest to use DebugView (https://docs.microsoft.com/en-us/sysinternals/downloads/debugview) and watch the eventlog while launching Elden Ring, you should see some debug messages from the proxy dll like this:
 
-   [15016] D3D12CreateDevice - LoadLibrary Result: xxxx
-   [15016] D3D12CreateDevice - Proxy function called !
-   [15016] D3D12CreateDevice - Original function address queried
-   [15016] D3D12CreateDevice - CallResult: xxx
+   D3D12CreateDevice - LoadLibrary Result: xxxx
+   D3D12CreateDevice - Proxy function called !
+   D3D12CreateDevice - Original function address queried
+   D3D12CreateDevice - CallResult: xxx
 
    -> this is the return code of D3D12CreateDevice and can be used to check for error messages 
 (see https://docs.microsoft.com/en-us/windows/win32/direct3ddxgi/dxgi-error)

@@ -10,7 +10,7 @@ So this is it:
 - To be more specific: The game seems to call D3D12CreateDevice with a min required feature level of D3D_FEATURE_LEVEL_12 - which is greater than the max. supported feature level on NVIDIA Kepler GPUs (11_0)
 - After that things go downhill fast (mainly because the game doesn't seem to perform proper error handling)...
 
-So this project tries to do the following in order to *maybe* get Elden Ring working for your old non-supported D3D_FEATURE_LEVEL_11_0/ 11_1 GPU:
+This project tries to do the following in order to *maybe* get Elden Ring working for your old non-supported D3D_FEATURE_LEVEL_11_0/ 11_1 GPU:
 - provide a "fake" d3d12.dll that will be loaded instead of the real d3d12.dll by Elden Ring 
 - the "fake" d3d12.dll just forwards all but one function to the original d3d12.dll (renamed to d3d12_original.dll)
 - the "fake" d3d12.dll provides a different implementation of the failing function call D3D12CreateDevice, which just calls the original D3D12CreateDevice function with the same parameters but D3D_FEATURE_LEVEL set to 11_0 instead of 12_0

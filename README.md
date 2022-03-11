@@ -19,7 +19,8 @@ This project tries to do the following in order to *maybe* get Elden Ring workin
 
 # How to try this out ?
 
-1. Build this project with Visual Studio 2019 using the x64 target **OR** just grab the dll file from the Github release
+1. Build this project with Visual Studio 2019 using the x64 target **OR** just grab the dll file from the Github release here:
+   https://github.com/tuffee88/d3d12ProxyEdrDx11_0/releases
 
 2. Grab the real d3d12.dll and d3d12core.dll from your windows/system32 folder, place both dlls in the Elden Ring game folder (where eldenring.exe is located) 
 

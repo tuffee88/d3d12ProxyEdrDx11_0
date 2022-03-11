@@ -63,7 +63,7 @@ This project tries to do the following in order to *maybe* get Elden Ring workin
 2. According to user reports this works *for some cards* with Assassin's Creed Valhalla and Death Stranding, too
   - Feel free to give this a shot on other DX12 games that are requiring FEATURE_LEVEL_12_0 or 11_1 if you're stuck with a DX12 card that only supports FEATURE_LEVEL_11_0.
   - If this works for other games please let me know (add a comment to the pinned issues regarding support for other games) and I'll add a note to the README so other players can find this easier.
-  - Beware that you might experience crashes or graphicsl glitches - in that sorry, but that's not something that can be fixed in the scope of this project. You may try to run this using Vulkan vkd3d-proton, which *might* fix the issues but usually has a performance penalty (see hint above).
+  - Beware that you might experience crashes or graphics glitches - in that sorry, but that's not something that can be fixed in the scope of this project. You may try to run this using Vulkan vkd3d-proton, which *might* fix the issues but usually has a performance penalty (see hint above).
 
 3. The whole project is very likely not a good example how to do something like this, so use with caution ! 
 

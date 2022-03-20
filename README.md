@@ -74,7 +74,7 @@ If d3d12_original.dll is not present in the game folder the system d3d12.dll (fr
 3. The whole project is very likely not a good example how to do something like this, so use with caution ! 
 
 4. Due to the function hooking techniques employed the Debug and Release binaries might exhibit different behaviour (see source comments for more details)
-  - If you're having issues with the Debug build please always try the release build.
+  - If you're having issues with the Debug build please always try the release build and vice-versa.
 
 5. To debug render issues Microsoft PIX (https://devblogs.microsoft.com/pix/) should work (use the attach to process option)
 

@@ -2,27 +2,27 @@ LIBRARY d3d12
 
 EXPORTS
 
-D3D12CoreCreateLayeredDevice=d3d12_original.D3D12CoreCreateLayeredDevice @104
-D3D12CoreGetLayeredDeviceSize=d3d12_original.D3D12CoreGetLayeredDeviceSize @105
-D3D12CoreRegisterLayers=d3d12_original.D3D12CoreRegisterLayers @106
+D3D12CoreCreateLayeredDevice=Proxy_D3D12CoreCreateLayeredDevice @104
+D3D12CoreGetLayeredDeviceSize=Proxy_D3D12CoreGetLayeredDeviceSize @105
+D3D12CoreRegisterLayers=Proxy_D3D12CoreRegisterLayers @106
 
 D3D12CreateDevice=Proxy_D3D12CreateDevice @101 
-D3D12CreateRootSignatureDeserializer=d3d12_original.D3D12CreateRootSignatureDeserializer @107 
-D3D12CreateVersionedRootSignatureDeserializer=d3d12_original.D3D12CreateVersionedRootSignatureDeserializer @108 
+D3D12CreateRootSignatureDeserializer=Proxy_D3D12CreateRootSignatureDeserializer @107 
+D3D12CreateVersionedRootSignatureDeserializer=Proxy_D3D12CreateVersionedRootSignatureDeserializer @108 
 
-D3D12DeviceRemovedExtendedData=d3d12_original.D3D12DeviceRemovedExtendedData @109 ;No export in D3D12.lib-> Added manually via d3d12AddExp.def/.lib
-D3D12EnableExperimentalFeatures=d3d12_original.D3D12EnableExperimentalFeatures @110 
-D3D12GetDebugInterface=d3d12_original.D3D12GetDebugInterface @102 
+D3D12DeviceRemovedExtendedData=Proxy_D3D12DeviceRemovedExtendedData @109 ;No export in D3D12.lib-> Added manually via d3d12AddExp.def/.lib
+D3D12EnableExperimentalFeatures=Proxy_D3D12EnableExperimentalFeatures @110 
+D3D12GetDebugInterface=Proxy_D3D12GetDebugInterface @102 
 
-D3D12GetInterface=d3d12_original.D3D12GetInterface @111 
-D3D12PIXEventsReplaceBlock=d3d12_original.D3D12PIXEventsReplaceBlock @112 
-D3D12PIXGetThreadInfo=d3d12_original.D3D12PIXGetThreadInfo @113 
+D3D12GetInterface=Proxy_D3D12GetInterface @111 
+D3D12PIXEventsReplaceBlock=Proxy_D3D12PIXEventsReplaceBlock @112 
+D3D12PIXGetThreadInfo=Proxy_D3D12PIXGetThreadInfo @113 
 
-D3D12PIXNotifyWakeFromFenceSignal=d3d12_original.D3D12PIXNotifyWakeFromFenceSignal @114 
-D3D12PIXReportCounter=d3d12_original.D3D12PIXReportCounter @115 
-D3D12SerializeRootSignature=d3d12_original.D3D12SerializeRootSignature @116 
+D3D12PIXNotifyWakeFromFenceSignal=Proxy_D3D12PIXNotifyWakeFromFenceSignal @114 
+D3D12PIXReportCounter=Proxy_D3D12PIXReportCounter @115 
+D3D12SerializeRootSignature=Proxy_D3D12SerializeRootSignature @116 
 
-D3D12SerializeVersionedRootSignature=d3d12_original.D3D12SerializeVersionedRootSignature @117 
-GetBehaviorValue=d3d12_original.GetBehaviorValue @100	;No export in D3D12.lib-> Added manually via d3d12AddExp.def/.lib
-SetAppCompatStringPointer=d3d12_original.SetAppCompatStringPointer @103	;No export in D3D12.lib-> Added manually via d3d12AddExp.def/.lib
+D3D12SerializeVersionedRootSignature=Proxy_D3D12SerializeVersionedRootSignature @117 
+GetBehaviorValue=Proxy_GetBehaviorValue @100	;No export in D3D12.lib-> Added manually via d3d12AddExp.def/.lib
+SetAppCompatStringPointer=Proxy_SetAppCompatStringPointer @103	;No export in D3D12.lib-> Added manually via d3d12AddExp.def/.lib
 

@@ -18,6 +18,12 @@
     <ClCompile Include="dllmain.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="dllAuxDbg.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="dllAuxFwd.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="dllmain.def">
@@ -29,5 +35,10 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="d3d12AddExp.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="dllAuxFwdAsm.asm">
+      <Filter>Quelldateien</Filter>
+    </MASM>
   </ItemGroup>
 </Project>

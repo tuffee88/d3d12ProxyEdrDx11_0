@@ -12,7 +12,7 @@ So this is it:
 
 This project tries to do the following in order to *maybe* get Elden Ring working for your old non-supported D3D_FEATURE_LEVEL_11_0/ 11_1 GPUs:
 - provide a "fake" d3d12.dll that will be loaded instead of the real d3d12.dll by Elden Ring 
-- the "fake" d3d12.dll just forwards all but one function to the original d3d12.dll (renamed to d3d12_original.dll)
+- the "fake" d3d12.dll just forwards all but one function call to the original d3d12.dll (renamed to d3d12_original.dll)
 - the "fake" d3d12.dll provides a different implementation of the failing function call D3D12CreateDevice, which just calls the original D3D12CreateDevice function with the same parameters but D3D_FEATURE_LEVEL set to 11_0 instead of 12_0
   - This *usually* leads to successfull D3D12 init and - getting ingame on various GPUs
 
@@ -23,12 +23,15 @@ This project tries to do the following in order to *maybe* get Elden Ring workin
 
    https://github.com/tuffee88/d3d12ProxyEdrDx11_0/releases
 
-2. Grab the real d3d12.dll and d3d12core.dll from your windows/system32 folder, place both dlls in the Elden Ring game folder (where eldenring.exe is located) 
+Steps 2 & 3 are now *OPTIONAL*: 
+If d3d12_original.dll is not present in the game folder the system d3d12.dll (from system32) will be used.
 
-3. RENAME the real d3d12.dll to d3d12_original.dll (the one inside the game folder, NOT the dll in windows/system32)
+2. *OPTIONAL*: Grab the real d3d12.dll and d3d12core.dll from your windows/system32 folder, place both dlls in the Elden Ring game folder (where eldenring.exe is located) 
+
+3. *OPTIONAL*: RENAME the real d3d12.dll to d3d12_original.dll (the one inside the game folder, NOT the dll in windows/system32)
    - Note: If you don't have d3d12core.dll in windows/system32 just omit this dll - or update your Windows version (then perform the copy of both dlls again after updating)
 
-4. Place the new "fake" d3d12.dll in the Elden Ring game folder, too (where eldenring.exe is located)
+4. Place the new "fake" d3d12.dll in the Elden Ring game folder (where eldenring.exe is located)
 
 5. Disable EasyAnti-Cheat: 
    - Rename start_protected_game.exe to start_protected_game_original.exe 
@@ -55,7 +58,7 @@ This project tries to do the following in order to *maybe* get Elden Ring workin
 
 4. If you're experiencing issues after passing the WSOD try running this game via Vulkan using vkd3d-proton (especially on AMD cards):
    - You can get Windows builds at: https://www.nexusmods.com/eldenring/mods/12
-   - Replace d3d12_original.dll with the d3d12.dll from vkd3d-proton and try launching the game
+   - Replace d3d12_original.dll with the d3d12.dll from vkd3d-proton and try launching the game (see optional step 2/3)
 
 # Notes
 1. So far I've received success reports for the following GPUs: 
@@ -69,6 +72,13 @@ This project tries to do the following in order to *maybe* get Elden Ring workin
      - Especially Assassin's Creed Valhalla might be unplayable due to frequent crashes (reports from Kepler/Maxwell 1.Gen cards). If this happens to you: Sorry, but I won't be able to fix these kinds of issues    
 
 3. The whole project is very likely not a good example how to do something like this, so use with caution ! 
+
+4. Due to the function hooking techniques employed the Debug and Release binaries might exhibit different behaviour (see source comments for more details)
+  - If you're having issues with the Debug build please always try the release build.
+
+5. To debug render issues Microsoft PIX (https://devblogs.microsoft.com/pix/) should work (use the attach to process option)
+
+6. ReShade should also work - if 1.) the system32 d3d12.dll is used (so no d3d12_original.dll in the game folder, omit setup steps 2,3) and 2.) Microsoft PIX support is not loaded (if you have PIX installed simply rename WinPixGpuCapturer.dll and ReShade should work)    
 
 I just thought this might be helpful for other people stuck on Nvidia GTX 6xx or 7xx series GPUs, no guarantees or anything !
 

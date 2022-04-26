@@ -62,7 +62,7 @@ If d3d12_original.dll is not present in the game folder the system d3d12.dll (fr
 
 # Notes
 1. So far I've received success reports for the following GPUs: 
-- Geforce: 940mx, 960m, 850m, 850mx, 680, 690 750ti, 760, 770, 780, 780Ti, Tesla K40*
+- Geforce: 940mx, 960m, 850m, 850mx, 670, 680, 690 750ti, 760, 770, 780, 780Ti, Tesla K40*, Quadro m1200
 - Radeon: R9 280x, 270x, R7 370
 
 2. According to user reports this works *for some cards* with Assassin's Creed Valhalla and Death Stranding, too
